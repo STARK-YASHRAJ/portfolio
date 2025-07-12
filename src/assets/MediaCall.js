@@ -7,9 +7,11 @@ import ss4 from "./media/Screenshot_4.png"
 import ss5 from "./media/Screenshot_5.png"
 import ss6 from "./media/Screenshot_6.png"
 import mans from "./media/mans.png"
+import ram from "./media/ram.png"
 
 
 export const Portfolio_image ={
+    ram,
     man:mans,
     image:user_image,
     image1:user_image1,

@@ -1,22 +1,28 @@
-import React from 'react'
+import CustomDrawer from './CustomDrawer'
+import CustomButton from './CustomButton'
 
 function Navbar() {
+  const navList = ['Home', "Experience", "Skills", "Process", "Portfolio", "Contact"]
   return (
-    <section className=' bg-black pt-8'>
-      <div className='container mx-auto text-white flex justify-between items-center'>
+    <section className=' bg-white md:bg-black py-3 md:py-8'>
+      <div className='container md:px-0 px-5 mx-auto text-white flex justify-between items-center'>
         <div>
-          <h1 className='text-5xl font-semibold cursor-pointer'>RSP</h1>
+          <h1 className='text-5xl font-semibold text-slate-800 md:text-white cursor-pointer'>
+            R<span className='text-yellow100'>S</span>P
+          </h1>
         </div>
         <div>
-          <ul className='flex gap-8 items-center font-semibold cursor-pointer'>
-            <li className='hover:underline underline-offset-[12px] transition delay-300 duration-500 ease-in-out  decoration-yellow-500 decoration-2'>Home</li>
-            <li className='hover:underline underline-offset-[12px] transition delay-300 duration-500 ease-in-out  decoration-yellow-500 decoration-2'>Experience</li>
-            <li className='hover:underline underline-offset-[12px] transition delay-300 duration-500 ease-in-out  decoration-yellow-500 decoration-2'>Skills</li>
-            <li className='hover:underline underline-offset-[12px] transition delay-300 duration-500 ease-in-out  decoration-yellow-500 decoration-2'>Process</li>
-            <li className='hover:underline underline-offset-[12px] transition delay-300 duration-500 ease-in-out  decoration-yellow-500 decoration-2'>Portfolios</li>
-            <li className='hover:underline underline-offset-[12px] transition delay-300 duration-500 ease-in-out  decoration-yellow-500 decoration-2'>Contact</li>
-            <button className='bg-yellow-500 rounded py-2 px-5 transition delay-150 duration-300 ease-in-out hover:bg-slate-500 hover:text-white'>Contact Me</button>
-          </ul>
+          <div className='hidden md:block'>
+            <ul className='flex  md:gap-6 lg:gap-8 items-center font-semibold cursor-pointer'>
+              {
+                navList.map((row, index) =>
+                  <li key={index} className='hover:underline underline-offset-[12px] transition delay-300 duration-500 ease-in-out  decoration-yellow-500 decoration-2'>{row}</li>
+                )
+              }
+              <CustomButton title='Contact Me' className='rounded !px-6' />
+            </ul>
+          </div>
+          <div className='block md:hidden'><CustomDrawer /></div>
         </div>
       </div>
     </section>
