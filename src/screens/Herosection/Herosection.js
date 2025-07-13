@@ -1,4 +1,3 @@
-import React from 'react'
 import { Portfolio_image } from '../../assets/MediaCall'
 import { FaCalendarAlt } from "react-icons/fa";
 import { BsBookmark } from "react-icons/bs";
@@ -6,51 +5,65 @@ import { IoMdHappy } from "react-icons/io";
 import { FaLaptopCode } from "react-icons/fa";
 import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
 import { FaStar } from "react-icons/fa6";
-import { FaGooglePlay } from "react-icons/fa6";
-import { BsQrCode } from "react-icons/bs";
-import { BsApple } from "react-icons/bs";
-import { FaCalculator } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa6";
-import { CiMail } from "react-icons/ci";
 import { ReactTyped } from "react-typed";
 import CustomButton from '../../components/CustomButton';
 import Projects from '../../components/uiComponents/Projects';
 import ContactUs from '../../components/uiComponents/ContactUs';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import { skillData } from '../../utilities';
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from '../../contaxts/ThemeContaxt';
+import { MdOutlineKeyboardDoubleArrowUp } from 'react-icons/md';
 
 const Herosection = () => {
+  const { darkMode, toggleDarkMode, loading } = useContext(ThemeContext);
 
-  const skillData = [
-    {
-      title: "React UI",
-      desc: "Responsive Design, Pixel-Perfect UI, Multiple Theme Support"
-    },
-    {
-      title: "API Integration",
-      desc: "REST/RESTful, WebSocket, Multipart Form Data, API Testing"
-    },
-    {
-      title: "State Management",
-      desc: "Redux & Redux toolkit, Contaxt API"
-    },
-    {
-      title: "Backend",
-      desc: "Node JS, Express Js"
-    },
-    {
-      title: "Database Management",
-      desc: "MongoDB"
-    }
-    , {
-      title: "Version Control",
-      desc: "Proficient in Git & GitHub(Version Control, Branching, Merging etc)"
-    },
-    {
-      title: "UI Library",
-      desc: "Tailwind CSS, Bootstrap, Material UI, Tan Stack etc"
-    }
-  ]
+  const [showButton, setShowButton] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleClick = () => {
+    setIsClicked(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 200); // Match your transition duration
+  };
+
+
   return (
     <>
+      {showButton && (
+        <div
+          onClick={handleClick}
+          className='h-20 w-11 z-50 rounded-full fixed bottom-4 right-4 flex items-center justify-center bg-yellow100 cursor-pointer'
+        >
+          <MdOutlineKeyboardDoubleArrowUp
+            className={`text-white100 text-3xl transform transition-transform duration-200 ${isClicked ? '-translate-y-[3px]' : ''
+              }`}
+          />
+        </div>
+      )}
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      {loading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="w-16 h-16 border-4 border-dashed border-white rounded-full animate-spin"></div>
+        </div>
+      )}
+
       <section className=' bg-black'>
         <div className='container relative h-[calc(100vh-75px)] md:px-0 px-5 items-center mx-auto flex justify-between text-white'>
           <div className='flex z-50 flex-col gap-3 sm:gap-5' >
@@ -61,7 +74,6 @@ const Herosection = () => {
             </h1>
             <h2 className=' text-4xl md:text-5xl font-bold text-yellow100'>Expert React Developer</h2>
             <p className='mt-2'>I specialize in building high performance React apps and Website with clean architecture, responsive UI,<br /> and seamless cross platform functionality. Let’s transform your idea into a feature rich mobile<br /> app and website that users love.</p>
-            {/* <button className='self-start bg-yellow-500 transition delay-150 duration-300 ease-in-out rounded py-3 px-6 hover:bg-slate-900 hover:text-white'>Download CV</button> */}
             <div>
               <CustomButton title='Download CV' className='rounded !px-6' />
             </div>
@@ -105,7 +117,7 @@ const Herosection = () => {
 
         </div>
       </section>
-      <section className='pb-10 bg-[#FCFCFC]'>
+      <section id='Skills' className='pb-10 bg-[#FCFCFC]'>
         <div className='container md:px-0 px-5 mx-auto flex flex-col gap-10 '>
           <div className='flex flex-col items-center gap-1 justify-center'>
             <h1 className='text-center text-4xl sm:text-5xl text-slate-700 font-bold'>MY SKILL SET</h1>
@@ -158,7 +170,7 @@ const Herosection = () => {
       <section className='container mx-auto bg-white p-2 '>
         <div className='flex flex-col sm:px-0 px-5 gap-6 sm:gap-8'>
           <div className='flex flex-col items-center gap-1 justify-center'>
-            <h1 className='text-center text-3xl sm:text-5xl text-slate-700 font-bold'>SERVICES FIT YOUR NEEDS PERFECTLY</h1>
+            <h1 className='text-center text-3xl sm:text-5xl text-slate-700 font-bold' id='Experience'>SERVICES FIT YOUR NEEDS PERFECTLY</h1>
             <div className='h-0.5 bg-yellow100 w-32 mt-3' />
             <div className='h-0.5 bg-yellow100 w-20' />
 
@@ -197,10 +209,10 @@ const Herosection = () => {
         </div>
 
       </section>
-      <section className='bg-white py-16 sm:px-0 px-5'>
+      <section id='Experience' className='bg-white py-16 sm:px-0 px-5'>
         <div className='flex container mx-auto flex-col gap-10 justify-center items-center'>
           <div className='flex flex-col items-center gap-1 justify-center'>
-            <h1 className='text-center text-3xl sm:text-5xl text-slate-700 font-bold'>CLIENT REVIEWS</h1>
+            <h1  className='text-center text-3xl sm:text-5xl text-slate-700 font-bold'>CLIENT REVIEWS</h1>
             <div className='h-0.5 bg-yellow100 w-32 mt-3' />
             <div className='h-0.5 bg-yellow100 w-20' />
 
@@ -289,7 +301,7 @@ const Herosection = () => {
         <div className='container mx-auto'>
           <div className='flex flex-col gap-8 md:px-0 px-5'>
             <div className='flex flex-col items-center gap-1 justify-center'>
-              <h1 className='text-center text-3xl sm:text-5xl text-slate-700 font-bold'>MY WORK SHOWCASE</h1>
+              <h1 className='text-center text-3xl sm:text-5xl text-slate-700 font-bold' id='Portfolio'>MY WORK SHOWCASE</h1>
               <div className='h-0.5 bg-yellow100 w-32 mt-3' />
               <div className='h-0.5 bg-yellow100 w-20' />
 
@@ -301,8 +313,8 @@ const Herosection = () => {
           </div>
         </div>
       </section>
-      
-      <ContactUs/>
+      <ContactUs />
+      <Footer />
     </>
   )
 }

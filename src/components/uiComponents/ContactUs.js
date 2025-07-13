@@ -27,7 +27,7 @@ export default function ContactUs() {
     })
 
     return (
-        <section className='bg-white py-10'>
+        <section className='bg-white py-10' id="Contact">
             <div className='container flex flex-col gap-8 mx-auto md:px-0 px-5'>
 
                 <div className='flex flex-col items-center gap-1 justify-center'>
