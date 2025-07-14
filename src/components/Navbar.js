@@ -11,7 +11,7 @@ function Navbar({
       <div className='container md:px-0 px-5 mx-auto text-white flex justify-between items-center'>
         <div>
           <h1 className='text-5xl font-semibold text-slate-800 md:text-white cursor-pointer'>
-            R<span className='text-yellow100'>S</span>P
+            Y<span className='text-yellow100'>R</span>
           </h1>
         </div>
         <div className='flex items-center gap-4'>

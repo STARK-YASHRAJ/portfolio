@@ -68,18 +68,18 @@ const Herosection = () => {
         <div className='container relative h-[calc(100vh-75px)] md:px-0 px-5 items-center mx-auto flex justify-between text-white'>
           <div className='flex z-50 flex-col gap-3 sm:gap-5' >
             <h1 className=' text-3xl md:text-2xl  lg:text-4xl xl:text-7xl font-bold'>
-              <ReactTyped strings={["I’m Ram Sakal Patel"]} typeSpeed={70}
+              <ReactTyped strings={["I’m YASHRAJ"]} typeSpeed={70}
                 backSpeed={50}
                 loop />
             </h1>
-            <h2 className=' text-4xl md:text-5xl font-bold text-yellow100'>Expert React Developer</h2>
+            <h2 className=' text-4xl md:text-5xl font-bold text-yellow100'> React Developer</h2>
             <p className='mt-2'>I specialize in building high performance React apps and Website with clean architecture, responsive UI,<br /> and seamless cross platform functionality. Let’s transform your idea into a feature rich mobile<br /> app and website that users love.</p>
             <div>
               <CustomButton title='Download CV' className='rounded !px-6' />
             </div>
           </div>
           <div className=' md:block hidden '>
-            <img className='!w-[85%] mx-auto sm:w-[90%] md:w-[96%] mt-0 object-cover"' src={Portfolio_image.ram} alt='logo' />
+            <img className='!w-[85%] mx-auto sm:w-[90%] md:w-[96%] mt-0 object-cover"' src={Portfolio_image.yash} alt='logo' />
           </div>
         </div>
       </section>
@@ -91,7 +91,7 @@ const Herosection = () => {
             <div className='relative xl:border-[20px] xl:border-[#4C5865] xl:w-[390px] xl:h-[600px]'>
               <div className='xl:absolute xl:top-[70px] xl:left-10 bg-yellow100 overflow-hidden md:w-[360px] md:h-[500px] '>
 
-                <img className='object-fill flex items-center mx-auto justify-center pt-14 relative overflow-hidden' src={Portfolio_image.ram} alt='' />
+                <img className='object-fill flex items-center mx-auto justify-center pt-14 relative overflow-hidden' src={Portfolio_image.yash} alt='' />
               </div>
 
             </div>
@@ -149,8 +149,9 @@ const Herosection = () => {
             <div className=' grid grid-cols-1 sm:py-0 py-8 sm:gap-0 gap-8 sm:grid-cols-3  container m-auto'>
               <div className='text-center gap-1 sm:gap-2 flex flex-col items-center'>
                 <FaCalendarAlt className='text-white text-4xl sm:text-8xl ' />
-                <p className='text-white text-2xl sm:text-5xl font-bold'>1.6+</p>
-                <p className='text-white text-xl sm:text-3xl font-bold'>Years of Experience</p>
+                <p className='text-white text-2xl sm:text-5xl font-bold'>0.7+</p>
+                <p className='text-white text-xl sm:text-3xl font-bold'>"Less than 1 year of work experience and currently still working"
+</p>
               </div>
               <div className='text-center gap-1 sm:gap-2 flex flex-col items-center'>
                 <BsBookmark className='text-white text-4xl sm:text-8xl ' />
@@ -292,7 +293,7 @@ const Herosection = () => {
                   <FaStar className='text-yellow100 text-xl' />
                 </li>
               </ul>
-              <p className='text-sm py-3 text-[#3a4555] px-5 pb-8 font-normal text-justify'>Working with Rida was an amazing experience! She understood our requirements perfectly and built a smooth, fast, and beautiful Flutter app for our business. Communication was easy, and she delivered everything on time. Highly recommended for anyone looking for a reliable Flutter developer</p>
+              <p className='text-sm py-3 text-[#3a4555] px-5 pb-8 font-normal text-justify'>Working with YASHRAJ was an amazing experience! She understood our requirements perfectly and built a smooth, fast, and beautiful Flutter app for our business. Communication was easy, and she delivered everything on time. Highly recommended for anyone looking for a reliable Flutter developer</p>
             </div>
           </div>
         </div>

@@ -25,6 +25,6 @@ export const skillData = [
     },
     {
       title: "UI Library",
-      desc: "Tailwind CSS, Bootstrap, Material UI, Tan Stack etc"
+      desc: "Tailwind CSS, Bootstrap, Material UI, "
     }
   ]

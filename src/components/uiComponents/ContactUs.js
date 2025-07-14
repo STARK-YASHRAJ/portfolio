@@ -46,12 +46,12 @@ export default function ContactUs() {
                             <li> <FaPhone className='text-gray-700 text-xl' /> </li>
                             <li className='text-gray-700 font-bold text-xl'>Call Me ( whatsapp)</li>
                         </ul>
-                        <h1 className='pl-7 pt-1 text-gray-500 font-semibold'>+923206632809</h1>
+                        <h1 className='pl-7 pt-1 text-gray-500 font-semibold'>+91 7266929936</h1>
                         <ul className='items-center flex text-center gap-2 mt-5'>
                             <li> <CiMail className='text-gray-700 text-2xl' /> </li>
                             <li className='text-gray-700 font-bold text-xl'>Gmail Me</li>
                         </ul>
-                        <p className='pl-7 text-gray-500 font-semibold'>ridasyed244@gmail.com</p>
+                        <p className='pl-7 text-gray-500 font-semibold'>starkyashraj70@gmail.com</p>
                     </div>
                     <form onSubmit={formik.handleSubmit}>
                         <div className='flex flex-col gap-7'>
